@@ -1,4 +1,4 @@
-# ELE542 – Proto1: Mobile Robot (Real-Time Embedded Systems)
+# ELE543 – Proto1: Mobile Robot (Real-Time Embedded Systems)
 
 This repository contains the code and documentation for **Proto1** of the ELE543 course *Systèmes ordonnés en temps réel*.  
 The project involves programming an STM32F051R8 microcontroller to control a small mobile robot in **driving mode** with **obstacle detection** using sonars.

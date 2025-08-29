@@ -1,24 +1,23 @@
 /**
- ******************************************************************************
- * File Name          : pwm.c
- * Description        : ce module contien tout ce qui conserne le controle est le fonctionnement du pwm
- * Created            : Jun 2022
- * Author             : Thomas Giguere Sturrock
- ******************************************************************************
+ * @file        pwm.c
+ * @brief       Module for PWM control and operation.
+ *
+ * @details     This module contains the functions to configure and manage the
+ * TIM3 peripheral for PWM generation. It controls the speed and direction of
+ * the robot's motors by adjusting the PWM duty cycle and setting GPIO pins
+ * for forward/reverse control. An interrupt handler is also included to
+ * signal a 5ms interval for other tasks within the system.
+ *
+ * @author      Thomas Giguere Sturrock
+ * @date        Jun 2022
  */
+
 /* Includes ------------------------------------------------------------------*/
 #include "pwm.h"
 #include <math.h>
 /* Defines -------------------------------------------------------------------*/
 #define TIM3_PRESCALER (4 - 1)
 #define TIM3_ARR_VALUE (60000-1)
-/* Private typedef -----------------------------------------------------------*/
-
-/* Private function prototypes -----------------------------------------------*/
-
-/* Private variables ---------------------------------------------------------*/
-
-/* Private function prototypes -----------------------------------------------*/
 
 /* Public functions  ---------------------------------------------------------*/
 

@@ -1,21 +1,21 @@
 /**
- ******************************************************************************
- * File Name          : usart.c
- * Description        : Ce fichier sert pour configurer et ou utiliser le
- * 						peripherique USART
- * Created            : 13 juin 2022
- * Author             : Thomas Giguere Sturrock
- ******************************************************************************
+ * @file        usart.c
+ * @brief       Module for USART communication and control.
+ *
+ * @details     This module provides the low-level functions to configure the
+ * USART2 peripheral for serial communication. It uses an interrupt-driven
+ * approach with circular buffers for efficient data handling. The main
+ * functionality includes receiving commands from an external device
+ * (e.g., a remote control), parsing them using a state machine, and
+ * transmitting data back. It ensures the integrity of received
+ * commands before updating the robot's control state.
+ *
+ * @author      Thomas Giguere Sturrock
+ * @date        Jun 2022
  */
 
 /* Includes ------------------------------------------------------------------*/
 #include "usart.h"
-
-/* Defines -------------------------------------------------------------------*/
-
-/* Private typedef -----------------------------------------------------------*/
-
-/* Private function prototypes -----------------------------------------------*/
 
 /* Private variables ---------------------------------------------------------*/
 static uint8_t etat = 0;
@@ -24,8 +24,6 @@ static uint8_t data_envoie_usart[30];
 static buffer_t buffer_telecommande_reception;
 static buffer_t buffer_telecommande_envoie;
 uint8_t toggle_led_uart = 0;
-
-/* Private function prototypes -----------------------------------------------*/
 
 /* Public functions  ---------------------------------------------------------*/
 

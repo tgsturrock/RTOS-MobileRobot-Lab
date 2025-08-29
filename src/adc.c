@@ -1,11 +1,19 @@
 /**
- ******************************************************************************
- * File Name          : adc.c
- * Description        : ce module contien tout ce qui correspond a la lecture et analyse de l'adc
- * Created            : Jun 2022
- * Author             : Thomas Giguere Sturrock
- ******************************************************************************
- */
+ * @file        adc.c
+ * @brief       Module for ADC (Analog-to-Digital Converter) readings and analysis.
+ *
+ * @details     This module handles the configuration of the ADC peripheral and
+ * manages the acquisition and processing of analog data. It is
+ * specifically designed to measure motor speeds and perform a
+ * calibration routine to map ADC values to corresponding motor
+ * speeds (positive and negative). An interrupt-driven approach
+ * is used to read from ADC channels 4 and 5 for the left and
+ * right motors, respectively.
+ *
+ * @author      Thomas Giguere Sturrock
+ * @date        Jun 2022
+*/
+
 /* Includes ------------------------------------------------------------------*/
 #include "adc.h"
 #include "main.h"
@@ -17,9 +25,6 @@
 #define AVANT 		1
 #define ARRIERE 	-1
 #define ARRET 		0
-/* Private typedef -----------------------------------------------------------*/
-
-/* Private function prototypes -----------------------------------------------*/
 
 /* Private variables ---------------------------------------------------------*/
 

@@ -1,22 +1,20 @@
 /**
- ******************************************************************************
- * File Name          : i2c.c
- * Description        : ce mocule sert de driver i2c
- * Created            : Jun 2022
- * Author             : Thomas Giguere Sturrock
- ******************************************************************************
+ * @file        i2c.c
+ * @brief       Hardware driver for the I2C bus.
+ *
+ * @details     This module provides the low-level functions required to
+ * configure and manage the I2C1 peripheral in master mode. It uses an
+ * interrupt-driven circular buffer to handle asynchronous I2C read and
+ * write transactions, which are primarily used for communication with
+ * peripheral devices, such as sonar sensors.
+ *
+ * @author      Thomas Giguere Sturrock
+ * @date        Jun 2022
  */
+
 /* Includes ------------------------------------------------------------------*/
 #include "i2c.h"
 #include "moteur.h"
-
-/* Defines -------------------------------------------------------------------*/
-
-/* Private typedef -----------------------------------------------------------*/
-
-/* Private function prototypes -----------------------------------------------*/
-
-/* Private variables ---------------------------------------------------------*/
 
 // Tampon de trame du I2C
 volatile uint32_t I2CBuf[I2CBUFSIZE];

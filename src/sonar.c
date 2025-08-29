@@ -1,20 +1,22 @@
 /**
- ******************************************************************************
- * File Name          : sonar.c
- * Description        : ce module s'occupe du control du sonar
- * Created            : Jun 2022
- * Author             : Thomas Giguere Sturrock
- ******************************************************************************
+ * @file        sonar.c
+ * @brief       Module for controlling and managing sonar sensors.
+ *
+ * @details     This module provides the core logic for the robot's sonar-based
+ * obstacle detection. It manages communication with the left and right sonar
+ * sensors via the I2C bus, initiating pings and reading the distance to the
+ * nearest object. The detection range is dynamically adjusted based on the
+ * robot's current speed. It also provides status flags to indicate if an
+ * obstacle has been detected on either side.
+ *
+ * @author      Thomas Giguere Sturrock
+ * @date        Jun 2022
  */
+
 /* Includes ------------------------------------------------------------------*/
 #include "sonar.h"
 #include "i2c.h"
 #include <math.h>
-/* Defines -------------------------------------------------------------------*/
-
-/* Private typedef -----------------------------------------------------------*/
-
-/* Private function prototypes -----------------------------------------------*/
 
 /* Private variables ---------------------------------------------------------*/
 uint8_t swap_gauche_droite = 0;
@@ -24,7 +26,6 @@ uint8_t sonar_gauche = 100;
 uint8_t sonar_droit = 100;
 
 uint8_t init_sonar = 1;
-/* Private function prototypes -----------------------------------------------*/
 
 /* Public functions  ---------------------------------------------------------*/
 

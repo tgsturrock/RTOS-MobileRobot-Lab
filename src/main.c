@@ -1,19 +1,32 @@
-/****************************Proto 1********************************************
- Author : Bruno De Kelper et Alexandre Ceriani
- Date   : 10-06-2016
- Description :
- GPIO : -User button (PB0 et PB1)
-        -Reset button (NRST)
-        -LED bleu (PC8) et verte (PC9)
-        -Led externe au board (PC0-PC7)
-        -I2C1 SDA (PB7) et SCL (PB6)
-        -ADC (PA4 et PA5)
-        -Bit Direction_FB (PA6 et PA7)
-        -Bit Direction Gauche (LSB : PB12 MSB : PB13)
-        -Bit Direction Droit (LSB : PB14 MSB : PB15)
-        -Bit calibration (PA8)
-        -PWM sur timer 3 channel 1 (PB4) et 2 (PB5)
-        -USART2 RX (PA2) et TX (PA3)
+/**
+ * @file        main.c
+ * @author     Thomas Giguère Sturrock
+ * @date        Jun 2022
+ * @brief       Main program file for the Proto 1 embedded system.
+ * This file initializes and manages the robot's hardware
+ * components and implements the main control loop.
+ *
+ * @details     The system uses a state machine to parse commands via
+ * USART2, and a SysTick interrupt handles a 5ms update
+ * cycle. The robot's behavior is managed by checking for
+ * emergency stops (user buttons) and processing sensor
+ * data (sonars, ADC) to control motor PWM outputs.
+ *
+ * @note        This code is intended for a specific microcontroller
+ * and hardware configuration.
+ *
+ * @section     Hardware_Pinout
+ * - **User Buttons:** PB0 (Start), PB1 (Emergency Stop)
+ * - **LEDs:** PC8 (Blue), PC9 (Green), PC0-PC7 (External)
+ * - **I2C1:** PB7 (SDA), PB6 (SCL)
+ * - **ADC:** PA4, PA5
+ * - **Motor Control:**
+ * - **Direction:** PA6 (Forward/Backward), PA7 (Direction)
+ * - **Left:** PB12 (LSB), PB13 (MSB)
+ * - **Right:** PB14 (LSB), PB15 (MSB)
+ * - **Calibration:** PA8
+ * - **PWM (Timer 3):** PB4 (Channel 1), PB5 (Channel 2)
+ * - **USART2:** PA2 (RX), PA3 (TX)
  */
 
 #include <stdio.h> /*sprintf*/

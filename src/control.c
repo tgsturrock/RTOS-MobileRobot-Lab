@@ -1,25 +1,24 @@
 /**
- ******************************************************************************
- * File Name          : control.c
- * Description        : ce mocule contien la structure de donne de control
- * Created            : Jun 2022
- * Author             : Thomas Giguere Sturrock
- ******************************************************************************
+ * @file        control.c
+ * @brief       Module for the robot's main control logic and data management.
+ *
+ * @details     This module defines the `control_struct_t` data structure, which
+ * holds the robot's operational state, including motor speeds,
+ * angles, and command values. It provides functions to initialize
+ * this structure, update its values based on UART input, and implement
+ * the primary control task. The `control_tsk` function processes
+ * data from the ADC and sonar sensors to adjust motor PWM outputs,
+ * including a simple obstacle avoidance routine.
+ *
+ * @author      Thomas Giguere Sturrock
+ * @date        Jun 2022
  */
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "control.h"
 #include "adc.h"
 #include "moteur.h"
-/* Defines -------------------------------------------------------------------*/
-
-/* Private typedef -----------------------------------------------------------*/
-
-/* Private function prototypes -----------------------------------------------*/
-
-/* Private variables ---------------------------------------------------------*/
-
-/* Private function prototypes -----------------------------------------------*/
 
 /* Public functions  ---------------------------------------------------------*/
 
@@ -41,8 +40,6 @@ void initControl(control_struct_t *control){
 	control->v_moyenne_gauche = 0;
 	control->v_moyenne_droite = 0;
 
-
-	//and more to come
 }
 
 /**

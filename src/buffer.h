@@ -1,3 +1,12 @@
+/**
+ ******************************************************************************
+ * File Name          : control.h
+ * Description        : ce mocule contien la structure de donne de buffer
+ * Created            : Jun 2022
+ * Author             : Thomas Giguere Sturrock
+ ******************************************************************************
+ */
+
 #ifndef BUFFER_H_
 #define BUFFER_H_
 

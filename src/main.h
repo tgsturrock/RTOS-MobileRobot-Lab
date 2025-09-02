@@ -1,7 +1,7 @@
 /**
  ******************************************************************************
  * File Name          : main.h
- * Description        : ce mocule sert de driver i2c
+ * Description        : ce mocule contien les masques utilisé pour configurer les differents modules
  * Created            : Jun 2022
  * Author             : Thomas Giguere Sturrock
  ******************************************************************************

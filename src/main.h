@@ -1,7 +1,7 @@
 /**
  ******************************************************************************
  * File Name          : main.h
- * Description        : ce mocule contien les masques utilisé pour configurer les differents modules
+ * Description        : ce mocule contien les marco utilisé pour configurer les differents modules
  * Created            : Jun 2022
  * Author             : Thomas Giguere Sturrock
  ******************************************************************************
